@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'spiderman';
+    src: url('../assets/fonts/spider.ttf');
+}
+@font-face {
+    font-family: 'gilroy';
+    src: url(
+        '../assets/fonts/Gilroy-Black.ttf'
+    );
+}
+
+@font-face {
+    font-family: 'gilroyR';
+    src: url(
+        '../assets/fonts/Gilroy-Regular.ttf'
+    );
+}
+
+.aboutSection{
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+.aboutTitle, .aboutText{
+    margin: 20px;
+}
+.aboutText{
+
+    width: 60%;
+    align-self: flex-start;
+    z-index: 1;
+}
+.title{
+    font-family: 'gilroy',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 4rem;
+    color: #fff;
+    text-align: left;
+    /* margin-top: rem; */
+}
+
+.text{
+    color: rgb(255, 255, 255);
+    font-family: 'gilroyR',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: left;
+    margin-top: 2rem;
+    z-index: 0;
+}
+
+.button{
+    background-color: #000000;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-family: 'gilroyR',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.button:hover
+{
+    background-color: #fff;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
