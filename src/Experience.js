@@ -234,11 +234,11 @@ scene.add(ambientLight)
 
 const directionLight = new THREE.DirectionalLight(0xffffff, 1)
 directionLight.position.set(0, 0, 1)
-directionLight.lookAt(0,0,1)
+directionLight.lookAt(0,0,2)
 scene.add(directionLight)
 
-const pointLight1 = new THREE.PointLight(0x0000ff, 1)
-pointLight1.position.set(0, 3, 1)
+const pointLight1 = new THREE.PointLight(0xffffff, 1)
+pointLight1.position.set(0, 0, 1)
 scene.add(pointLight1)
 
 
@@ -289,6 +289,8 @@ window.addEventListener('resize', () =>
    composer.setSize(sizes.width, sizes.height)
    composer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 })
+
+
 
 
 const clock = new THREE.Clock()
