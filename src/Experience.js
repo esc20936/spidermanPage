@@ -45,19 +45,14 @@ const scene = new THREE.Scene()
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.x = 0
-camera.position.y = 2.26
-camera.position.z = 2.5
+camera.position.x = 1
+camera.position.y = 3.5
+camera.position.z = -1
 
 
-camera.lookAt(0,2,0)
+// camera.lookAt(0,2,0)
 scene.add(camera)
 
-const look = () => {
-
-    camera.lookAt(0,1,0)
-
-}
 
 // add camera position to gui
 // gui.add(camera.position, 'x').min(-3).max(3).step(0.01)
@@ -94,12 +89,22 @@ const scalePercent = (start, end) => {
 
 let plane2 = new THREE.Mesh(
     new THREE.PlaneGeometry(10, 10, 10, 10),
-    new THREE.MeshBasicMaterial({ color: 0x000000 })
+    new THREE.MeshBasicMaterial({ color: 0x000000  })
 )
 // plane2.rotation.x = -Math.PI * 0.5
-plane2.position.z = 2.3
+plane2.position.z = -0.7
 plane2.position.y = -5
 scene.add(plane2)
+
+
+let plane3 = new THREE.Mesh(
+    new THREE.PlaneGeometry(10, 10, 10, 10),
+    new THREE.MeshBasicMaterial({ color: 0xff0000  })
+)
+// plane2.rotation.x = -Math.PI * 0.5
+plane3.position.z = -1.5
+plane3.position.y = -4
+scene.add(plane3)
 
 
 
@@ -116,8 +121,8 @@ gltfLoader.load(
       });
         spiderman = gltf.scene;
         spiderman.scale.set(2, 2, 2)
-        spiderman.position.set(0, 0,2)
-        // spiderman.rotation.y = 0.5
+        spiderman.position.set(1, 0,-1)
+        // spiderman.rotation.y = toRadians(180)
         // gltf.scene.rotation.x = Math.PI/6
         // camera.lookAt(gltf.scene.position)
         scene.add(spiderman)
@@ -132,26 +137,21 @@ animations.push({
     start:0,
     end: 20,
     func: () => {
-        if(spiderman){
-            // give a 360 degree rotation to spiderman
-            // spiderman.rotation.y = lerp(spiderman.rotation.y, toRadians(360), 0.1)
-            spiderman.rotation.y = lerp(0,toRadians(280) ,scalePercent(0,20))
-            spiderman.position.z = lerp(0,-0.5 ,scalePercent(0,20))
-            spiderman.position.x = lerp(0,1 ,scalePercent(0,20))
-        }
+
+        camera.position.z = lerp(-1, -0.5, scalePercent(0,20));
+        camera.position.y = lerp(3.5, 2.7, scalePercent(0,20));
+
     }
 })
-// close shot to face
 animations.push({
     start: 20,
     end: 45,
     func: () => {
-        if(spiderman){
-            spiderman.rotation.y = lerp(toRadians(280),toRadians(365) ,scalePercent(20,45))
-            spiderman.position.y = lerp(0,-1,scalePercent(20,45))
-            spiderman.position.z = lerp(-0.5,2 ,scalePercent(20,45))
-            spiderman.position.x = lerp(1,-0.20 ,scalePercent(20,45))
-        }
+
+
+        camera.position.y = lerp(2.7, 3.2, scalePercent(20,45));
+        camera.position.x = lerp(1, 1.2, scalePercent(20,45));
+
     }
 })
 
@@ -159,13 +159,10 @@ animations.push({
     start: 45,
     end: 70,
     func: () => {
-        if(spiderman){
-            // spiderman.rotation.y = lerp(toRadians(370),toRadians(400) ,scalePercent(45,70))
 
-            spiderman.position.z = lerp(2,2 ,scalePercent(45,70))
-            spiderman.position.y = lerp(-1,-0.5 ,scalePercent(45,70))
-            spiderman.position.x = lerp(-0.20,0 ,scalePercent(45,70))
-        }
+        camera.position.y = lerp(3.2, 3.4, scalePercent(45,70));
+        camera.position.x = lerp(1.2, 1, scalePercent(45,70));
+
     }
 })
 
@@ -173,7 +170,8 @@ animations.push({
     start: 70,
     end: 99,
     func: () => {
-        plane2.position.y = lerp(-5,0,scalePercent(70,99))
+        plane3.position.y = lerp(-4, 3.5, scalePercent(70,99));
+        plane2.position.y = lerp(-5,3,scalePercent(70,99))
     }
 })
 

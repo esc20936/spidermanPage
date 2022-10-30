@@ -89,7 +89,7 @@
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     .title {
-        font-size: 8rem;
+        font-size: 7rem;
     }
     .text{
         font-size: 2rem;
@@ -102,19 +102,27 @@
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     .title {
-        font-size: 10rem;
+        font-size: 7rem;
     }
     .text{
-        font-size: 3rem;
+        font-size: 2rem;
+    }
+
+    .aboutTitle, .aboutText{
+        width: 40%;
     }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
     .title {
-        font-size: 10rem;
+        font-size: 7rem;
     }
     .text{
-        font-size: 3rem;
+        font-size: 2rem;
+    }
+
+    .aboutTitle, .aboutText{
+        width: 40%;
     }
 }
