@@ -43,7 +43,7 @@
 
 
 .glitch {
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: bold;
     text-transform: uppercase;
     position: relative;
@@ -102,4 +102,9 @@
         -0.04em -0.025em 0 #fffc00;
     }
   }
+
+/* add media queries */
+@media screen and (max-width: 768px) {
+    
+}
   

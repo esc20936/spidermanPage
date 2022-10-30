@@ -6,7 +6,8 @@ import model from './assets/Model/spiderman.glb?url'
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { GlitchPass } from 'three/addons/postprocessing/GlitchPass.js';
-
+import { DotScreenPass } from 'three/examples/jsm/postprocessing/DotScreenPass.js';
+import { HalftonePass } from 'three/examples/jsm/postprocessing/HalftonePass.js';
 // import { RGBELoader } from '//cdn.skypack.dev/three@0.130.1/examples/jsm/loaders/RGBELoader.js'
 
 // import imageSource from '../static/textures/door/color.jpg'
@@ -83,12 +84,12 @@ const scalePercent = (start, end) => {
  */
 
 
-    let plane = new THREE.Mesh(
-    new THREE.PlaneGeometry(10, 10, 10, 10),
-    new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true })
-)
-plane.rotation.x = -Math.PI * 0.5
-scene.add(plane)
+//     let plane = new THREE.Mesh(
+//     new THREE.PlaneGeometry(10, 10, 10, 10),
+//     new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true })
+// )
+// plane.rotation.x = -Math.PI * 0.5
+// scene.add(plane)
 
 
 let plane2 = new THREE.Mesh(
@@ -242,13 +243,19 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
 
 // add light to model
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
+const ambientLight = new THREE.AmbientLight(0xffffff,1)
 scene.add(ambientLight)
 
 const directionLight = new THREE.DirectionalLight(0xffffff, 1)
 directionLight.position.set(0, 0, 1)
-directionLight.lookAt(0,0,0)
+directionLight.lookAt(0,0,1)
 scene.add(directionLight)
+
+const pointLight1 = new THREE.PointLight(0x0000ff, 1)
+pointLight1.position.set(0, 3, 1)
+scene.add(pointLight1)
+
+
 
 // red light
 const pointLight = new THREE.PointLight(0xff0000, 1)
@@ -299,6 +306,9 @@ composer.addPass( new RenderPass( scene, camera ) );
 let glitchPass = new GlitchPass();
 composer.addPass( glitchPass );
 
+let dotScreenPass = new HalftonePass();
+composer.addPass( dotScreenPass );
+
 
 
 const clock = new THREE.Clock()
@@ -311,7 +321,7 @@ const tick = () =>
     // console.log(camera.position)
     playAnimations()
 
-    if(currentSection !== 1)
+    // if(currentSection !== 1)
         composer.render();
     // if(spiderman)
     //     console.log(spiderman.rotation.y)
