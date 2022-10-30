@@ -8,14 +8,13 @@ This project consist with only a landing page, which is a 3D model of Spiderman,
 
 ## How to run the project
 
-Download Node.js. Run this followed commands:
+Download Node.js. Run this followed commands inside the project folder:
+
 ```
 # Install dependencies (only the first time)
 npm install
 
-# Run the local server at localhost:8080
+# Run the local server
 npm run dev
 
-# Build for production in the dist/ directory
-npm run build
 ```
