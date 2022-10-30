@@ -210,20 +210,6 @@ window.addEventListener('scroll', () =>
 
 
 
-window.addEventListener('resize', () =>
-{
-    // Update sizes
-    sizes.width = window.innerWidth
-    sizes.height = window.innerHeight
-
-    // Update camera
-    camera.aspect = sizes.width / sizes.height
-    camera.updateProjectionMatrix()
-
-    // Update renderer
-    renderer.setSize(sizes.width, sizes.height)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-})
 
 
 
@@ -273,29 +259,6 @@ const playAnimations = () => {
     })
 }
 
-const addParticles = (Tcolor) => {
-    const particlesCount = 50;
-    const positions = new Float32Array(particlesCount * 3)
-    for(let i = 0; i < particlesCount; i++) {
-        positions[i*3+0] = (Math.random()-0.5) * 10
-        positions[i*3+1] = (Math.random()-0.5 )*10
-        positions[i*3+2] = (Math.random()-0.5 ) * 10
-    }
-    
-    const particlesGeometry = new THREE.BufferGeometry()
-    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
-    
-    const particlesMaterial = new THREE.PointsMaterial({ size: 0.02, sizeAttenuation: true, color: Tcolor })
-    const particles = new THREE.Points(particlesGeometry, particlesMaterial)
-    scene.add(particles)
-}
-
-// addParticles('#00fffc')
-// addParticles('#fc00ff')
-
-
-
-
 
 
 
@@ -309,6 +272,23 @@ composer.addPass( glitchPass );
 let dotScreenPass = new HalftonePass();
 composer.addPass( dotScreenPass );
 
+window.addEventListener('resize', () =>
+{
+    // Update sizes
+    sizes.width = window.innerWidth
+    sizes.height = window.innerHeight
+
+    // Update camera
+    camera.aspect = sizes.width / sizes.height
+    camera.updateProjectionMatrix()
+
+    // Update renderer
+    renderer.setSize(sizes.width, sizes.height)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+
+   composer.setSize(sizes.width, sizes.height)
+   composer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+})
 
 
 const clock = new THREE.Clock()

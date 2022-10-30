@@ -44,3 +44,18 @@
     z-index: 1;
     text-align: right;
 }
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .list{
+        font-size: 3rem;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .list{
+        font-size: 4rem;
+    }
+}

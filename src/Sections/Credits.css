@@ -45,3 +45,34 @@
     margin-top: 50px;
     font-size: 1.5rem;
 }
+
+
+@media only screen and (min-width: 600px) {
+    .aa{
+        font-size: 1.5rem;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+   
+    .aa{
+        font-size: 2rem;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+   
+    .aa{
+        font-size: 3rem;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+   
+    .aa{
+        font-size: 4rem;
+    }
+}
