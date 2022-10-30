@@ -1,78 +1,76 @@
 @font-face {
-    font-family: 'spiderman';
-    src: url('../assets/fonts/spider.ttf');
+  font-family: "spiderman";
+  src: url("../assets/fonts/spider.ttf");
 }
-.creditsSection{
-    background-color: #000000;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
+.creditsSection {
+  background-color: #000000;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 }
 
-.creditsTitle{
-    font-family: 'spiderman';
-    font-size: 4rem;
-    color: #fff;
-    text-align: center;
-    /* margin-top: rem; */
-    text-shadow: 0 0 10px #000;
-    background-color: #000000;
+.creditsTitle {
+  font-family: "spiderman";
+  font-size: 4rem;
+  color: #fff;
+  text-align: center;
+  /* margin-top: rem; */
+  text-shadow: 0 0 10px #000;
+  background-color: #000000;
 }
-.creditsText{
-    /* background-color: #000000; */
-    /* height: 100vh;
+.creditsText {
+  /* background-color: #000000; */
+  /* height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; */
-    z-index: 1;
+  z-index: 1;
 }
-.Ctext{
-    font-family: 'gilroyR',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 2rem;
-    color: #fff;
-    text-align: center;
-    /* margin-top: rem; */
-    text-shadow: 0 0 10px #000;
-    /* background-color: #000000; */
+.Ctext {
+  font-family: "gilroyR", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+  /* margin-top: rem; */
+  text-shadow: 0 0 10px #000;
+  /* background-color: #000000; */
 }
-.aa{
-    margin-top: 50px;
-    font-size: 1.5rem;
+.aa {
+  margin-top: 50px;
+  font-size: 1.5rem;
 }
-
 
 @media only screen and (min-width: 600px) {
-    .aa{
-        font-size: 1.5rem;
-    }
+  .aa {
+    font-size: 1.5rem;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-   
-    .aa{
-        font-size: 2rem;
-    }
+  .aa {
+    font-size: 2rem;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-   
-    .aa{
-        font-size: 3rem;
-    }
+  .aa {
+    font-size: 3rem;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-   
-    .aa{
-        font-size: 4rem;
-    }
+  .aa {
+    font-size: 4rem;
+  }
 }

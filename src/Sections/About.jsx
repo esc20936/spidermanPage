@@ -1,7 +1,6 @@
 import React from "react";
 import "./About.css";
 export default function About() {
-
   const handleClick = () => {
     window.open("https://www.marvel.com/characters/spider-man-peter-parker");
   };
@@ -16,14 +15,14 @@ export default function About() {
 
         <div className="aboutText">
           <p className="text">
-            A poor sickly orphan, is bitten by a
-            radioactive spider. As a result of the bite, he gains superhuman
-            strength, speed, and agility, along with the ability to cling to
-            walls, turning him into Spider-Man.
+            A poor sickly orphan, is bitten by a radioactive spider. As a result
+            of the bite, he gains superhuman strength, speed, and agility, along
+            with the ability to cling to walls, turning him into Spider-Man.
           </p>
 
-          <button type="button" className="button" onClick={handleClick}>Read More</button>
-          
+          <button type="button" className="button" onClick={handleClick}>
+            Read More
+          </button>
         </div>
       </div>
     </>
